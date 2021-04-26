@@ -54,6 +54,7 @@ in {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
+    initExtra = (builtins.readFile ./zshrc);
   };
 
   # programs.fish.enable = true;
@@ -64,6 +65,7 @@ in {
 
   home.packages = with pkgs; [
     rust-analyzer
+    direnv
   ];
 
 }

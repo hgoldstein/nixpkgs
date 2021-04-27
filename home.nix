@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 
+
 let 
   shellAliases = {
     vim = "nvim";
@@ -15,6 +16,7 @@ let
       sha256 = "1ii60xpisgr3wg7nkh1j22gnsi3kfksdb7k042s5l98npvbisndq";
     };
   };
+  machine = import ./machine.nix;
 
 in {
   # Let Home Manager install and manage itself.
@@ -22,8 +24,9 @@ in {
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "hgoldstein";
-  home.homeDirectory = "/Users/hgoldstein";
+
+  home.username = machine.username;
+  home.homeDirectory = machine.homeDirectory;
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage

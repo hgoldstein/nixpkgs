@@ -57,6 +57,7 @@ in {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
+    profileExtra = (builtins.readFile ./zprofile);
     initExtra = (builtins.readFile ./zshrc);
   };
 
@@ -69,6 +70,7 @@ in {
   home.packages = with pkgs; [
     rust-analyzer
     direnv
+    powerline-go
   ];
 
 }

@@ -70,7 +70,6 @@ in {
   home.packages = with pkgs; [
     rust-analyzer
     direnv
-    powerline-go
   ];
 
 }

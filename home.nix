@@ -61,6 +61,7 @@ in {
       vim-kolor
       vim-markdown
       vim-nix
+      deoplete-nvim
     ];
   };
 

@@ -70,6 +70,17 @@ in {
     enable = true;
     enableAutosuggestions = true;
     enableCompletion = true;
+    plugins = [
+      {
+        name = "pure";
+        src = pkgs.fetchFromGitHub {
+          owner = "sindresorhus";
+          repo = "pure";
+          rev = "ff356fa2c7ea745bc4bc56a98632bac55c6c74a1";
+          sha256 = "13ms6z0r9y0zj8xa2zmyfzfjmmrnq1l0995qicpn2p3b8in25yhw";
+        };
+      }
+    ];
     profileExtra = (builtins.readFile ./zprofile);
     initExtra = (builtins.readFile ./zshrc);
   };

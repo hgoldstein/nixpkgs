@@ -9,7 +9,7 @@ set nohlsearch
 color kolor
 
 let g:deoplete#enable_at_startup = 1
-
+let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
 \ 'rust': ['rust-analyzer'],
 \ 'haskell': ['haskell-language-server-wrapper', '--lsp']

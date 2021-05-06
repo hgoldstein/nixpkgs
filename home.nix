@@ -22,17 +22,6 @@ in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  nixpkgs.overlays = [
-    (self: super: {
-      # https://github.com/NixOS/nixpkgs/pull/121339
-      wrapNeovimUnstable = (import (builtins.fetchTarball {
-        url =
-          "https://github.com/mweinelt/nixpkgs/archive/d603efb0c946d25242954323b9945420f5979f02.tar.gz";
-          sha256 = "0zff2pn6xzpnhx6ka51xaxvpkrhdfl9wma2nj0g0flmwpn9s3drg";
-        }) { config = { allowUnfree = true; }; }).wrapNeovimUnstable;
-      })
-    ];
-
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
 
@@ -52,7 +41,6 @@ in {
   programs.neovim = {
     enable = true;
     extraConfig = (builtins.readFile ./vimrc);
-    withPython = false;
     plugins = with pkgs.vimPlugins; [
       LanguageClient-neovim
       ctrlp

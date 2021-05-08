@@ -8,6 +8,8 @@ set nohlsearch
 
 color kolor
 
+let g:airline_theme = 'bubblegum'
+
 let g:deoplete#enable_at_startup = 1
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {

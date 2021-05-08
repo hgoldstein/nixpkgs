@@ -50,6 +50,9 @@ in {
       vim-markdown
       vim-nix
       deoplete-nvim
+      vim-toml
+      vim-airline
+      vim-airline-themes
     ];
   };
 

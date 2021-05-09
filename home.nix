@@ -86,4 +86,9 @@ in {
     niv
   ];
 
+  programs.exa = {
+    enable = true;
+    enableAliases = true;
+  };
+
 }

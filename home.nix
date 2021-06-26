@@ -84,11 +84,25 @@ in {
     rust-analyzer
     direnv
     niv
+    rustup
+    clang
   ];
 
   programs.exa = {
     enable = true;
     enableAliases = true;
+  };
+
+  programs.keychain = {
+    enable = true;
+    enableZshIntegration = true;
+    keys = [ "id_ed25519" ];
+    agents = [ "ssh" ];
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 
 }

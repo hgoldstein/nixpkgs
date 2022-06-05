@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 
-let 
+let
   shellAliases = {
     vim = "nvim";
     vi = "nvim";
@@ -85,7 +85,7 @@ in {
     direnv
     niv
     rustup
-    clang
+    yarn
   ];
 
   programs.exa = {

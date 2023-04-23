@@ -84,7 +84,6 @@ in {
     direnv
     niv
     rustup
-    yarn
   ];
 
   programs.exa = {

@@ -84,6 +84,7 @@ in {
     direnv
     niv
     rustup
+    opam
   ];
 
   programs.exa = {

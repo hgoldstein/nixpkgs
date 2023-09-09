@@ -84,10 +84,9 @@ in {
     direnv
     niv
     rustup
-    opam
   ];
 
-  programs.exa = {
+  programs.eza = {
     enable = true;
     enableAliases = true;
   };

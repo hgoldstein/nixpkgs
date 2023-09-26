@@ -41,8 +41,12 @@ let g:deoplete#enable_at_startup = 1
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
 \ 'rust': ['rust-analyzer'],
-\ 'haskell': ['haskell-language-server-wrapper', '--lsp']
+\ 'haskell': ['haskell-language-server-wrapper', '--lsp'],
+\ 'elm': ['elm-language-server'],
 \ }
+let g:LanguageClient_rootMarkers = {
+      \ 'elm' : ['elm.json'],
+      \ }
 
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>

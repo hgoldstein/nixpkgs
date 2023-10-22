@@ -1,3 +1,4 @@
+
 (setq
  inhibit-startup-message t ; We do not care about the startup message
  ring-bell-function 'ignore ; The bell is annoying, don't ring that
@@ -10,17 +11,6 @@
 ;; changes in WindowConfiguration. It is included in GNU Emacs, and documented
 ;; as winner-mode.
 (when (fboundp 'winner-mode) (winner-mode 1))
-
-(setq use-package-always-ensure t
-      package-archives 
-      '(("melpa" . "https://melpa.org/packages/")
-	("elpa" . "https://elpa.gnu.org/packages/")))
-(package-initialize)
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(eval-when-compile (require 'use-package))
-(use-package gnu-elpa-keyring-update)
 
 (setq
  backup-directory-alist `((".*" . ,"~/Documents/.backups"))
@@ -158,3 +148,5 @@
   :commands lsp)
 
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+
+(set-face-attribute 'default nil :font "Fira Code" :height 130)

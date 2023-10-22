@@ -40,7 +40,9 @@
 (use-package rg
   :config (setq rg-ignore-case 'smart)
   :init (rg-enable-default-bindings))
+
 (use-package swiper)
+
 (use-package company
   :diminish company-mode
   :bind (("TAB" . 'company-complete))
@@ -71,7 +73,7 @@
 ;; Be evil >:)
 (use-package evil
   :demand t
-  :bind ("<escape>" . keyboard-escape-quit)
+  :bind (("<escape>" . keyboard-escape-quit))
   :init
   (setq evil-want-keybinding nil
 	evil-respect-visual-line-mode t
@@ -115,6 +117,10 @@
   :bind (("M-x" . counsel-M-x)
 	 ("C-x b" . counsel-ibuffer)
 	 ("C-x C-f" . counsel-find-file)
+	 :map evil-normal-state-map
+	 ("SPC x" . counsel-M-x)
+	 ("SPC SPC" . counsel-ibuffer)
+	 ("SPC f" . counsel-find-file)
 	 :map minibuffer-local-map
 	 ("C-r" . 'counsel-minibuffer-history)))
 
@@ -123,8 +129,7 @@
   :init (setq which-key-idle-delay 0.3)
   :config (which-key-mode))
 
-(use-package helpful
-  :custom
+(use-package helpful :custom
   (counsel-describe-function-function #'helpful-callable)
   (counsel-describe-variable-function #'helpful-variable)
   :bind
@@ -141,3 +146,15 @@
 (with-eval-after-load 'python
   (define-key python-mode-map (kbd "<tab>") 'python-indent-shift-right)
   (define-key python-mode-map (kbd "S-<tab>") 'python-indent-shift-left))
+
+(use-package flycheck
+  :config (global-flycheck-mode))
+
+(use-package lsp-mode
+  :init
+  (setq lsp-keymap-prefix "C-l")
+  :hook ((tuareg-mode . lsp)
+         (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
+
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)

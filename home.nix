@@ -121,6 +121,10 @@ in {
       rainbow-delimiters
       rg
       sudo-edit
+      tuareg
+      flycheck
+      lsp-mode
+      lsp-ivy
     ];
   };
 

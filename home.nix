@@ -103,33 +103,6 @@ in {
     enableZshIntegration = true;
   };
 
-  programs.emacs = {
-    enable = true;
-    extraPackages = emacsPackages: with emacsPackages; [
-      evil
-      evil-collection
-      ivy
-      ivy-rich
-      counsel
-      which-key
-      helpful
-      nix-mode
-      company
-      swiper
-      diminish
-      rainbow-mode
-      rainbow-delimiters
-      rg
-      sudo-edit
-      tuareg
-      flycheck
-      lsp-mode
-      lsp-ivy
-    ];
-  };
-
-  home.file.".emacs.d/init.el".source = ./init.el;
-
   nix = {
     package = pkgs.nix;
     settings.experimental-features = [ "nix-command" "flakes" ];

@@ -82,8 +82,8 @@ in {
 
   home.packages = with pkgs; [
     direnv
-    niv
     rustup
+    cmake
   ];
 
   programs.eza = {

@@ -44,6 +44,7 @@ let g:LanguageClient_serverCommands = {
 \ 'haskell': ['haskell-language-server-wrapper', '--lsp'],
 \ 'elm': ['elm-language-server'],
 \ }
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 let g:LanguageClient_rootMarkers = {
       \ 'elm' : ['elm.json'],
       \ }

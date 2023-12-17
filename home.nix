@@ -86,6 +86,8 @@ in {
     cmake
     gh
     sapling
+    go
+    gopls
   ];
 
   programs.eza = {

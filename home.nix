@@ -84,6 +84,8 @@ in {
     direnv
     rustup
     cmake
+    gh
+    sapling
   ];
 
   programs.eza = {

@@ -86,6 +86,7 @@ in {
     cmake
     gh
     sapling
+    ninja
     go
     gopls
   ];

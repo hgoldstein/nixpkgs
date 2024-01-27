@@ -89,6 +89,8 @@ in {
     ninja
     go
     gopls
+    hyperfine
+    ripgrep
   ];
 
   programs.eza = {

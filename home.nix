@@ -106,6 +106,7 @@ in {
         success_symbol = "⊢";
         error_symbol = "⊢";
       };
+      container.disabled = true;
     };
   };
 
